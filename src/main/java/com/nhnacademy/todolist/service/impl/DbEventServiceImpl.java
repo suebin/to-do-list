@@ -72,7 +72,7 @@ public class DbEventServiceImpl implements EventService {
     }
 
     @Override
-    public DailyRegisterCountResponseDto getDayilyRegisterCount(LocalDate targetDate) {
+    public DailyRegisterCountResponseDto getDailyRegisterCount(LocalDate targetDate) {
         long count = eventMapper.countByUserIdAndEventAt(UserIdStore.getUserId(), targetDate);
         return new DailyRegisterCountResponseDto(count);
     }

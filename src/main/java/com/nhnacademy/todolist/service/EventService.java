@@ -20,7 +20,7 @@ public interface EventService {
 
     List<EventDto> getEventListBydaily(String year, String month, String day);
 
-    DailyRegisterCountResponseDto getDayilyRegisterCount(LocalDate targetDate);
+    DailyRegisterCountResponseDto getDailyRegisterCount(LocalDate targetDate);
 
     void deleteEventByDaily(LocalDate eventAt);
 

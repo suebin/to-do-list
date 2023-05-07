@@ -18,7 +18,7 @@ public class CalendarController {
 
     @GetMapping("/daily-register-count")
     public DailyRegisterCountResponseDto dailyRegisterCount(@Valid DailyRegisterCountRequestDto dailyRegisterCountRequestDto) {
-        return eventService.getDayilyRegisterCount(dailyRegisterCountRequestDto.getDate());
+        return eventService.getDailyRegisterCount(dailyRegisterCountRequestDto.getDate());
     }
 
 }

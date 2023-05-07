@@ -2,6 +2,7 @@ package com.nhnacademy.todolist.controller;
 
 import com.nhnacademy.todolist.dto.EventCreatedResponseDto;
 import com.nhnacademy.todolist.dto.EventDto;
+import com.nhnacademy.todolist.exception.EventNotFoundException;
 import com.nhnacademy.todolist.exception.ValidationFailedException;
 import com.nhnacademy.todolist.service.EventService;
 import lombok.RequiredArgsConstructor;
@@ -23,50 +24,54 @@ public class EventController {
     private final EventService eventService;
 
     @ResponseStatus(value = HttpStatus.CREATED)
-    @PostMapping(value = {"/" ,""})
-    public EventCreatedResponseDto createEvent(@RequestBody @Valid EventDto eventDto, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+    @PostMapping(value = {"/", ""})
+    public EventCreatedResponseDto createEvent(@RequestBody @Valid EventDto eventDto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             throw new ValidationFailedException(bindingResult);
         }
         return eventService.insert(eventDto);
     }
 
-    @ResponseStatus(value=HttpStatus.NO_CONTENT)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     @DeleteMapping("/{event-id}")
-    public void deleteEvent(@PathVariable("event-id") long eventId ){
+    public void deleteEvent(@PathVariable("event-id") long eventId) {
         eventService.deleteOne(eventId);
     }
 
-    @ResponseStatus(value=HttpStatus.NO_CONTENT)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
     @DeleteMapping("/daily/{eventAt}")
-    public void deleteEventByDaily(@PathVariable("eventAt")String eventAt){
+    public void deleteEventByDaily(@PathVariable("eventAt") String eventAt) {
         eventService.deleteEventByDaily(LocalDate.parse(eventAt, DateTimeFormatter.ISO_DATE));
     }
 
-    //envet 조회
     @ResponseStatus(value = HttpStatus.OK)
     @GetMapping("/{event-id}")
-    public EventDto getEvent(@PathVariable("event-id") long eventId ){
-        return eventService.getEvent(eventId);
+    public EventDto getEvent(@PathVariable("event-id") long eventId) {
+        EventDto eventDto = eventService.getEvent(eventId);
+
+        if (Objects.isNull(eventDto)) {
+            throw new EventNotFoundException(eventId);
+        }
+        return eventDto;
     }
 
     @ResponseStatus(value = HttpStatus.OK)
-    @GetMapping(value = {"/",""})
+    @GetMapping(value = {"/", ""})
     public List<EventDto> getEventList(@RequestParam(name = "year") String year,
                                        @RequestParam(name = "month") String month,
-                                       @RequestParam(name="day", required = false) String day
-    ){
+                                       @RequestParam(name = "day", required = false) String day
+    ) {
 
         List<EventDto> eventDtos;
-        if(Objects.isNull(day)){
-            eventDtos = eventService.getEventListByMonthly(year,month);
-        }else{
+
+        if (Objects.isNull(day)) {
+            eventDtos = eventService.getEventListByMonthly(year, month);
+        } else {
             eventDtos = eventService.getEventListBydaily(year, month, day);
         }
         return eventDtos;
 
     }
-
 
 
 }

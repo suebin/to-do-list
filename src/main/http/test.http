@@ -1,7 +1,7 @@
 ###등록
 POST http://localhost:8080/api/calendar/events
 Content-Type: application/json
-X-USER-ID: marco
+X-USER-ID: suebin
 
 {
   "subject" : "mybatis",
@@ -11,25 +11,25 @@ X-USER-ID: marco
 ###조회
 GET http://localhost:8080/api/calendar/events/62?format=xml
 Accept: application/json
-X-USER-ID: marco
+X-USER-ID: suebin
 
 
 ###삭제
 DELETE http://localhost:8080/api/calendar/events/62
 Content-Type: application/json
-X-USER-ID: marco
+X-USER-ID: suebin
 
 
 ###삭제
 DELETE http://localhost:8080/api/calendar/events/daily/2023-05-15
 Content-Type: application/json
-X-USER-ID: marco
+X-USER-ID: suebin
 
 
 ###일일등록 카운트
 GET http://localhost:8080/api/calendar/daily-register-count?date=2023-05-08
 Accept: application/json
-X-USER-ID: marco
+X-USER-ID: suebin
 
 
 ###월별조회

@@ -49,8 +49,6 @@ i
 9src/main/java/com/nhnacademy/todo/mapper/EventMapper.java,8/6/868a05710f7614943b8645d1c5b553bf81c3e66f
 m
 =src/main/java/com/nhnacademy/todo/mapper/maps/EventMapper.xml,6/5/655c20cf68f177a8ccd86924cbd444734260a1eb
-G
-src/main/http/test.http,7/1/71ee2c47a389a9c8d4b3cad0ca3c751574afc9e6
 p
 @src/main/java/com/nhnacademy/todo/config/DatabaseProperties.java,2/7/27fde01bae330d953ee5dbd65d4bff2dc052b7ee
 h

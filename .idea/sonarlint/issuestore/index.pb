@@ -66,8 +66,6 @@ x
 Hsrc/test/java/com/nhnacademy/todo/service/impl/EventServiceImplTest.java,0/e/0ee613e68bb13a22aa60ab076091ae49ae271833
 u
 Esrc/test/java/com/nhnacademy/todo/controller/EventControllerTest.java,4/b/4b3b10ac4b1eded44c2570c05723e956313d9b6a
-G
-src/main/http/test.http,7/1/71ee2c47a389a9c8d4b3cad0ca3c751574afc9e6
 €
 Psrc/test/java/com/nhnacademy/todo/repository/impl/MemoryEventRepositoryTest.java,3/d/3df67046092190bd5d6db9bb0623554b388e2a42
 m

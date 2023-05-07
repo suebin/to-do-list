@@ -25,56 +25,56 @@ class EventMapperTest {
     EventMapper eventMapper;
     String userId = "suebin";
 
-//    @Test
-//    @DisplayName("이벤트 저장")
-//    void save() {
-//        Event event = new Event(userId, "Spring MVC test", LocalDate.now());
-//        eventMapper.save(event);
-//        Assertions.assertThat(event.getId()).isNotZero();
-//    }
+    @Test
+    @DisplayName("이벤트 저장")
+    void save() {
+        Event event = new Event(userId, "Spring MVC test", LocalDate.now());
+        eventMapper.save(event);
+        Assertions.assertThat(event.getId()).isNotZero();
+    }
 
-//    @Test
-//    @DisplayName("이벤트 조회")
-//    void getEvent() {
-//        EventResponseDto event = eventMapper.getEvent(91);
-//        Assertions.assertThat(event).isNotNull();
-//    }
-//
-//    @Test
-//    @DisplayName("해당 아이디의 이벤트 삭제")
-//    void deleteById() {
-//        eventMapper.deleteById(userId,1);
-//        Event event = eventMapper.getEventByUser(userId, 1);
-//        Assertions.assertThat(event).isNull();
-//    }
-//
-//    @Test
-//    @DisplayName("해당 일자의 모든 이벤트 삭제")
-//    void deleteByDaily() {
-//        eventMapper.deleteByDaily(userId, LocalDate.now());
-//        long count = eventMapper.countByUserIdAndEventAt(userId, LocalDate.now());
-//        Assertions.assertThat(count).isZero();
-//    }
-//
-//    @Test
-//    @DisplayName("일별 조회")
-//    void findAllByDay() {
-//        List<EventResponseDto> eventList = eventMapper.findAllByDay(userId, "2023", "05", "08");
-//        Assertions.assertThat(eventList).isNotNull();
-//    }
-//
-//    @Test
-//    @DisplayName("월별 조회")
-//    void findAllByMonth() {
-//        List<EventResponseDto> eventList = eventMapper.findAllByMonth(userId, "2023", "05");
-//        Assertions.assertThat(eventList).isNotNull();
-//    }
-//
-//    @Test
-//    @DisplayName("해당 일자의 등록된 이벤트 카운트")
-//    void countByUserIdAndEventAt() {
-//        LocalDate date = LocalDate.of(2023,5,1);
-//        long count = eventMapper.countByUserIdAndEventAt(userId, date);
-//        Assertions.assertThat(count).isZero();
-//    }
+    @Test
+    @DisplayName("이벤트 조회")
+    void getEvent() {
+        EventResponseDto event = eventMapper.getEvent(91);
+        Assertions.assertThat(event).isNotNull();
+    }
+
+    @Test
+    @DisplayName("해당 아이디의 이벤트 삭제")
+    void deleteById() {
+        eventMapper.deleteById(userId,1);
+        Event event = eventMapper.getEventByUser(userId, 1);
+        Assertions.assertThat(event).isNull();
+    }
+
+    @Test
+    @DisplayName("해당 일자의 모든 이벤트 삭제")
+    void deleteByDaily() {
+        eventMapper.deleteByDaily(userId, LocalDate.now());
+        long count = eventMapper.countByUserIdAndEventAt(userId, LocalDate.now());
+        Assertions.assertThat(count).isZero();
+    }
+
+    @Test
+    @DisplayName("일별 조회")
+    void findAllByDay() {
+        List<EventResponseDto> eventList = eventMapper.findAllByDay(userId, "2023", "05", "08");
+        Assertions.assertThat(eventList).isNotNull();
+    }
+
+    @Test
+    @DisplayName("월별 조회")
+    void findAllByMonth() {
+        List<EventResponseDto> eventList = eventMapper.findAllByMonth(userId, "2023", "05");
+        Assertions.assertThat(eventList).isNotNull();
+    }
+
+    @Test
+    @DisplayName("해당 일자의 등록된 이벤트 카운트")
+    void countByUserIdAndEventAt() {
+        LocalDate date = LocalDate.of(2023,5,1);
+        long count = eventMapper.countByUserIdAndEventAt(userId, date);
+        Assertions.assertThat(count).isZero();
+    }
 }
