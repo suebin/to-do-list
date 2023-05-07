@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'EF_jejudoldam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    font-family: 'NanumSquareNeo-Variable';
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 40px;
+    padding-bottom: 30px;
+    color: #db9898;
+    border-bottom: 1px solid #ccc;
+}
+
+#todo-nav{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: 'EF_jejudoldam';
+}
+
+#todo-nav-year, #todo-nav-month {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#todo-nav li{
+    width: 160px;
+    text-align: center;
+    margin: 5px 30px;
+
+}
+
+#todo-nav::after{
+    clear:both;
+    display: block;
+    content:'';
+}
+
+#todo-nav  a{
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    border: 0px;
+    background-color: #fff5f5;
+    padding:10px;
+}
+
+#todo-nav a:link{
+    color:black;
+}
+
+#todo-nav a:visited{
+    color: black;
+}
+
+#btn-next-month {
+    margin-right: 8px;
+}
+
+.todo-item{
+    display: flex;
+    justify-content: center;
+}
+
+.todo-item::after{
+    clear:both;
+    display: block;
+    content: '';
+}
+
+.todo-item > div {
+    border-radius: 10px;
+}
+.todo-item > ul {
+    border-radius: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.todo-item-day{
+    box-sizing:border-box;
+    line-height: 180px;
+    text-align: center;
+    font-weight: bold;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    width: 15%;
+    min-height: 200px;
+    float:left;
+    text-align: center;
+
+}
+
+.todo-item-form{
+    box-sizing:border-box;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    min-height: 200px;
+    width: 200px;
+    padding:20px;
+}
+
+#form > p {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 35px;
+    border-radius: 10px;
+    border: 0px;
+    padding-left: 7px;
+    background-color: #fff5f5;
+}
+
+button {
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #db9898;
+    color: white;
+}
+
+.todo-item-list{
+    padding:20px;
+    box-sizing:border-box;
+    float:left;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    min-height: 200px;
+    width: 300px;
+}
+
+.todo-item-list li {
+
+    margin-left:30px;
+}

@@ -1,0 +1,78 @@
+###등록
+POST http://localhost:8080/api/calendar/events
+Content-Type: application/json
+X-USER-ID: marco
+
+{
+  "subject" : "mybatis",
+  "eventAt": "2023-05-15"
+}
+
+###조회
+GET http://localhost:8080/api/calendar/events/62?format=xml
+Accept: application/json
+X-USER-ID: marco
+
+
+###삭제
+DELETE http://localhost:8080/api/calendar/events/62
+Content-Type: application/json
+X-USER-ID: marco
+
+
+###삭제
+DELETE http://localhost:8080/api/calendar/events/daily/2023-05-15
+Content-Type: application/json
+X-USER-ID: marco
+
+
+###일일등록 카운트
+GET http://localhost:8080/api/calendar/daily-register-count?date=2023-05-08
+Accept: application/json
+X-USER-ID: marco
+
+
+###월별조회
+GET http://localhost:8080/api/calendar/events/?year=2023&month=05
+Accept: application/json
+X-USER-ID: suebin
+
+
+###일별조회
+GET http://localhost:8080/api/calendar/events/?year=2023&month=05&day=08
+Accept: application/json
+X-USER-ID: suebin
+
+
+###예외 400
+GET http://localhost:8080/api/calendar/events
+Accept: application/json
+X-USER-ID: suebin
+
+###예외 401
+GET http://localhost:8080/api/calendar/events/1
+Accept: application/json
+
+###예외 403
+GET http://localhost:8080/api/calendar/events/1
+Accept: application/json
+X-USER-ID: abc
+
+###예외 404
+GET http://localhost:8080/api/test
+Accept: application/json
+X-USER-ID: suebin
+
+###예외 405
+PATCH http://localhost:8080/api/calendar/events/1
+Accept: application/json
+X-USER-ID: suebin
+
+
+###예외 500
+GET http://localhost:8080/api/calendar/events/a
+Accept: application/json
+X-USER-ID: suebin
+
+
+

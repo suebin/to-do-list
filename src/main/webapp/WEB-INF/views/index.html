@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>todo-list</title>
+  <link rel="stylesheet" href="/resources/style.css" />
+  <script type="text/javascript" src="/resources/navigator.js"></script>
+  <script type="text/javascript" src="/resources/apiStore.js"></script>
+  <script type="text/javascript" src="/resources/todo.api.js"></script>
+</head>
+
+<body>
+<div id="title">
+  <h1>To Do List</h1>
+</div>
+
+<ul id="todo-nav">
+  <li><a href="#" id="btn-prev-month">&lt;&lt;&nbsp;이전</a></li>
+  <li><span id="todo-nav-year"></span>-<span id="todo-nav-month"></span></li>
+  <li><a href="#" id="btn-next-month" >다음&nbsp;&gt;&gt;</a><a href="#" id="btn-current-month">이번 달</a></li>
+</ul>
+
+<div id="todo-item-container">
+
+</div>
+
+<template id="todo-item-template">
+  <div class="todo-item">
+
+    <div class="todo-item-day">
+      1
+    </div>
+
+    <div class="todo-item-form">
+      <form method="post" autocomplete="off" id="form">
+        <p><input type="text" name="todoDate" value="2023-3-13" readonly /> </p>
+        <p><input type="text"   name="todoSubject" placeholder="Add To Do List" /></p>
+        <p><button type="submit">Add</button></p>
+        <p><button type="button" class="btn-remove-all">Delete All</button></p>
+      </form>
+    </div>
+
+
+    <ul class="todo-item-list" >
+      <li>todo-item1</li>
+      <li>todo-item2</li>
+      <li>todo-item3</li>
+      <li>todo-item4</li>
+      <li>todo-item5</li>
+    </ul>
+
+  </div>
+</template>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nhnacademy.todolist.mapper.EventMapper">
+
+    <insert id="save" parameterType="com.nhnacademy.todolist.domain.Event">
+        INSERT INTO event SET
+        user_id = #{userId},
+        subject = #{subject},
+        event_at = #{eventAt},
+        created_at = NOW()
+
+        <selectKey keyProperty="id" resultType="Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <delete id="deleteById">
+        DELETE
+        FROM event
+        WHERE user_id = #{userId}
+          AND id = #{eventId}
+    </delete>
+
+    <delete id="deleteByDaily">
+        DELETE
+        FROM event
+        WHERE user_id = #{userId}
+          AND event_at = #{targetDate}
+    </delete>
+
+    <select id="getEventByUser" resultType="com.nhnacademy.todolist.domain.Event">
+        SELECT id, subject, user_id, event_at, created_at
+        FROM event
+        WHERE id = #{eventId}
+          AND user_id = #{userId}
+    </select>
+
+    <select id="getEvent" resultType="com.nhnacademy.todolist.dto.EventResponseDto">
+        SELECT id, subject, user_id, event_at, created_at
+        FROM event
+        WHERE id = #{eventId}
+    </select>
+
+    <select id="findAllByDay" resultType="com.nhnacademy.todolist.dto.EventResponseDto">
+        SELECT id, subject, user_id, event_at, created_at
+        FROM event
+        WHERE user_id = #{userId}
+        AND event_at = concat(#{year}, '-', #{month}, '-', #{day})
+    </select>
+
+    <select id="findAllByMonth" resultType="com.nhnacademy.todolist.dto.EventResponseDto">
+        SELECT id, subject, user_id, event_at, created_at
+        FROM event
+        WHERE user_id = #{userId}
+          AND date_format(event_at, '%Y-%m') = concat(#{year}, '-', #{month})
+    </select>
+
+    <select id="countByUserIdAndEventAt" resultType="long">
+        SELECT count(*)
+        FROM event
+        WHERE user_id = #{userId}
+          AND event_at = #{targetDate}
+    </select>
+</mapper>
