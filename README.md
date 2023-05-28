@@ -40,6 +40,8 @@
 - `원하는 날짜에 나만의 일정 등록/조회/삭제`
 - `Request Header (X-USER-ID)로 사용자 인증`
 
+<br>
+
 # 📋 API 명세서
 - [To Do List REST API in Notion](https://flint-passive-d48.notion.site/405992d9a0ef492a8f2e739d250b566f?v=5e908795f251453e80c32650b1c18d0e)
 
