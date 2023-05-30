@@ -1,5 +1,6 @@
 # 🗓️ To Do List
 - 나만의 일정을 캘린더에서 관리할 수 있는 To Do List 웹 페이지입니다.
+- Spring Framework 및 Spring Testing 연습을 위한 프로젝트입니다.
 
 <br>
 
