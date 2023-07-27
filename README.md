@@ -6,7 +6,7 @@
 
 # 🛠 기술 스택
 - `Front-End` : HTML, CSS, JavaScript
-- `Back-End` : Java
+- `Back-End` : Java, Spring
 - `Database` : MySQL
 - `Build` : Maven
 - `Tool` : IntelliJ IDEA, Github, SonarQube, MyBatis
